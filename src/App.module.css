@@ -6,9 +6,8 @@
 }
 
 .table {
-  border: 1px solid black;
   width: 600px;
-
+  font: 82.5%/1.3 'Open Sans','Arial',serif,sans-serif;
 }
 
 .header {
@@ -27,6 +26,9 @@
 
 .row {
   width: 100%;
+  min-height: 30px;
   display: flex;
   justify-content: space-around;
+  border: 1px solid #d0c2a5;
+  padding: 5px 0;
 }
