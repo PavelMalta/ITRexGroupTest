@@ -1,0 +1,32 @@
+.app {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.table {
+  border: 1px solid black;
+  width: 600px;
+
+}
+
+.header {
+  display: flex;
+  height: 100px;
+  background-color: #b6003d;
+  color: white;
+}
+
+.column {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
