@@ -6,11 +6,11 @@ import {v1} from "uuid";
 export const Table = (props) => {
     return (
         <div className={s.wrap}>
-            <table className={s.table}>
-                <tr className={s.header}>
-                    <th className={s.column}>Наименование иностранной валюты</th>
-                    <th className={s.column}>Количество единиц иностранной валюты, буквенный код валюты</th>
-                    <th className={s.column}>Официальный курс</th>
+            <table>
+                <tr>
+                    <th>Наименование иностранной валюты</th>
+                    <th>Количество единиц иностранной валюты, буквенный код валюты</th>
+                    <th>Официальный курс</th>
                 </tr>
                 {props.data.map((item) => {
                     return (
