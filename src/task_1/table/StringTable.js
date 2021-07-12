@@ -7,7 +7,7 @@ export const StringTable = (props) => {
         <tr>
             <td>{props.name}</td>
             <td>{props.unit} {props.letterCode}</td>
-            <td>{props.rate}</td>
+            <td className={s.rate}>{props.rate}</td>
         </tr>
     )
 }
