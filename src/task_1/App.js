@@ -14,9 +14,18 @@ function App() {
             })
     }, [])
 
+    const date = new Date().toLocaleDateString("ru", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+    })
+
     return (
         <div className={s.app}>
-           <Table data={data}/>
+            <div className={s.container}>
+                <h1>Официальный курс белорусского рубля по отношению к иностранным валютам, на {date}</h1>
+                <Table data={data}/>
+            </div>
         </div>
     );
 }
