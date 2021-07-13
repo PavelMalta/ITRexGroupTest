@@ -25,7 +25,7 @@ export const Task1 = () => {
     return (
         <div className={s.app}>
             <NavLink to={'/task2'}>
-                <button className={s.task2}>Task 2</button>
+                <span className={s.task2}>Look at the task 2</span>
             </NavLink>
             <div className={s.container}>
                 <h1>Официальный курс белорусского рубля по отношению к иностранным валютам, на {date}</h1>
