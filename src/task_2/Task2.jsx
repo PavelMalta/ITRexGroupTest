@@ -86,7 +86,7 @@ const exitFromMaze = (startMaze) => {
     }
     return checkPath(start, end) ? road : "The maze has no exit!!!"
 }
-const resultMaze = exitFromMaze(maze).join(', ')
+const resultMaze = typeof exitFromMaze(maze) === 'string' ? exitFromMaze(maze) : exitFromMaze(maze).join(", ")
 
 export const Task2 = () => {
 
@@ -114,7 +114,7 @@ export const Task2 = () => {
             {show
                 ? <div className={s.answer}>
                     [{resultMaze}]
-                </div>
+                  </div>
                 : null}
 
         </div>
