@@ -47,16 +47,16 @@ const exitFromMaze = (startMaze) => {
         let cords = []
 
         if (maze[y - 1][x] !== undefined) {
-            cords.push({x: x, y: y - 1, value: maze[y - 1][x], route: 'top'})
+            cords.push({x: x, y: y - 1, value: maze[y - 1][x], route: "'top'"})
         }
         if (maze[y + 1][x] !== undefined) {
-            cords.push({x: x, y: y + 1, value: maze[y + 1][x], route: 'down'})
+            cords.push({x: x, y: y + 1, value: maze[y + 1][x], route: "'down'"})
         }
         if (maze[y][x - 1] !== undefined) {
-            cords.push({x: x - 1, y: y, value: maze[y][x - 1], route: 'left'})
+            cords.push({x: x - 1, y: y, value: maze[y][x - 1], route: "'left'"})
         }
         if (maze[y][x + 1] !== undefined) {
-            cords.push({x: x + 1, y: y, value: maze[y][x + 1], route: 'right'})
+            cords.push({x: x + 1, y: y, value: maze[y][x + 1], route: "'right'"})
         }
         return cords.filter(el => el.value === '+')
     }
