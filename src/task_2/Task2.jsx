@@ -1,38 +1,25 @@
-export let maze = [
+import React from "react";
+import s from "../App.module.css";
+import {NavLink} from "react-router-dom";
+import {v1} from "uuid";
+
+
+export const maze = [
     ['#','#','#','#','#','#','#','#','#'],
     ['#','+','+','+','#','+','+','+','#'],
     ['#','+','#','+','#','+','#','+','#'],
-    ['+','+','#','+','0','+','#','+','#'],
-    ['#','#','#','+','#','#','#','#','#'],
-    ['#','#','+','+','#','#','#','#','#'],
+    ['#','+','#','+','0','+','#','+','+'],
+    ['#','+','#','+','#','#','#','#','#'],
+    ['#','+','+','#','#','#','#','#','#'],
     ['#','#','+','#','#','#','#','#','#'],
     ['#','#','#','#','#','#','#','#','#'],
 ]
-let maze2 = [
-    ['#','#','#','#','#','#','#','#','#'],
-    ['#','+','+','+','#','+','+','+','#'],
-    ['#','#','#','#','#','#','#','#','#'],
-    ['#','+','+','+','0','+','+','+','#'],
-    ['#','#','#','#','#','#','#','+','#'],
-    ['#','#','+','+','+','#','#','+','#'],
-    ['#','#','+','#','+','+','+','+','#'],
-    ['#','#','+','#','#','#','#','#','#'],
-]
-let maze3 = [
-    ['#','#','#','#','#','#','#','#','#'],
-    ['#','#','+','+','+','#','+','+','#'],
-    ['+','+','+','#','+','#','#','+','#'],
-    ['#','#','#','#','+','#','#','+','#'],
-    ['#','#','+','#','+','#','#','+','#'],
-    ['#','#','+','+','0','#','#','+','#'],
-    ['#','+','+','#','#','#','#','+','#'],
-    ['#','#','#','#','#','#','#','#','#'],
-]
-
-const exitFromMaze = (maze) => {
+const exitFromMaze = (startMaze) => {
+    let maze = startMaze.map(item => [...item])
     let start = maze.reduce((acc, item, ind) => item.indexOf("0") !== -1 ? acc = {y:ind, x:item.indexOf("0")}: acc, {})
 
     let end = {}
+
     for (let i = 0; i < maze.length; i++) {
         if (i === 0 || i === maze.length -1) {
             for(let j = 0; j<maze[i].length; j++) {
@@ -66,7 +53,6 @@ const exitFromMaze = (maze) => {
             cords.push({x: x - 1, y: y, value: maze[y][x-1], route: 'left'})
         }
         if (maze[y][x + 1] !== undefined) {
-            debugger
             cords.push({x: x + 1, y: y, value: maze[y][x+1], route: 'right'})
         }
         return cords.filter(el => el.value === '+')
@@ -95,7 +81,24 @@ const exitFromMaze = (maze) => {
         }
         return false
     }
-  return checkPath(start, end) ? road : "The maze has no exit!!!"
+    return checkPath(start, end) ? road : "The maze has no exit!!!"
 }
+const resultMaze = exitFromMaze(maze)
 
-export const result = exitFromMaze(maze2)
+export const Task2 = () => {
+
+    return (
+        <div>
+            Hello
+            <NavLink to={'/'}>
+                <button className={s.task2}>Task 1</button>
+            </NavLink>
+            <div className={s.mazeContainer}>
+                {maze.map(item => <div className={s.row} key={v1()}>{item.map(el => <div key={v1()}>{el}</div>)}</div>)}
+            </div>
+            <div>
+                [{resultMaze.join(', ')}]
+            </div>
+        </div>
+    )
+}

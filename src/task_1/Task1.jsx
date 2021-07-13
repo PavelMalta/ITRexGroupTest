@@ -2,7 +2,6 @@ import s from '../App.module.css';
 import React, {useEffect, useState} from "react";
 import {currencyAPI} from "./currency-api";
 import {Table} from "./table/Table";
-import "../task_2/maze"
 import {NavLink} from "react-router-dom";
 
 
