@@ -5,6 +5,12 @@
   margin-top: 50px;
 }
 
+.task2 {
+  position: fixed;
+  left: 100px;
+  top: 100px
+}
+
 .container {
   width: 600px;
 }

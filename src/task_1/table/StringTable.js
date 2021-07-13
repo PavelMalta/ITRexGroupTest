@@ -1,4 +1,4 @@
-import s from "../App.module.css";
+import s from "../../App.module.css";
 import React from "react";
 
 export const StringTable = (props) => {

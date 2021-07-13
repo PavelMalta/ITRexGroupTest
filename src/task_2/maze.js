@@ -1,4 +1,4 @@
-let maze = [
+export let maze = [
     ['#','#','#','#','#','#','#','#','#'],
     ['#','+','+','+','#','+','+','+','#'],
     ['#','+','#','+','#','+','#','+','#'],
@@ -31,7 +31,7 @@ let maze3 = [
 
 const exitFromMaze = (maze) => {
     let start = maze.reduce((acc, item, ind) => item.indexOf("0") !== -1 ? acc = {y:ind, x:item.indexOf("0")}: acc, {})
-    console.log(start)
+
     let end = {}
     for (let i = 0; i < maze.length; i++) {
         if (i === 0 || i === maze.length -1) {
@@ -49,7 +49,7 @@ const exitFromMaze = (maze) => {
             }
         }
     }
-    console.log(end)
+
 
     const getValidSid = (cord) => {
         let {y, x} = cord
@@ -98,6 +98,4 @@ const exitFromMaze = (maze) => {
   return checkPath(start, end) ? road : "The maze has no exit!!!"
 }
 
-const result = exitFromMaze(maze2)
-
-console.log(result)
+export const result = exitFromMaze(maze2)
