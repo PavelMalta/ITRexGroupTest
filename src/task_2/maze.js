@@ -11,12 +11,12 @@ let maze = [
 let maze2 = [
     ['#','#','#','#','#','#','#','#','#'],
     ['#','+','+','+','#','+','+','+','#'],
-    ['#','+','#','#','#','+','#','+','#'],
-    ['#','+','+','+','0','+','#','+','#'],
-    ['#','#','+','#','#','#','#','+','#'],
-    ['#','#','+','+','#','#','#','+','#'],
-    ['#','#','+','#','#','#','#','+','#'],
+    ['#','#','#','#','#','#','#','#','#'],
+    ['#','+','+','+','0','+','+','+','#'],
     ['#','#','#','#','#','#','#','+','#'],
+    ['#','#','+','+','+','#','#','+','#'],
+    ['#','#','+','#','+','+','+','+','#'],
+    ['#','#','+','#','#','#','#','#','#'],
 ]
 let maze3 = [
     ['#','#','#','#','#','#','#','#','#'],
@@ -56,16 +56,17 @@ const exitFromMaze = (maze) => {
 
         let cords = []
 
-        if (maze[y - 1] !== undefined) {
+        if (maze[y - 1][x] !== undefined) {
             cords.push({x: x, y: y-1, value: maze[y-1][x], route: 'top'})
         }
-        if (maze[y + 1] !== undefined) {
+        if (maze[y + 1][x] !== undefined) {
             cords.push({x: x, y: y+1, value: maze[y+1][x], route: 'down'})
         }
-        if (maze[x - 1] !== undefined) {
-            cords.push({x: x -1, y: y, value: maze[y][x-1], route: 'left'})
+        if (maze[y][x - 1] !== undefined) {
+            cords.push({x: x - 1, y: y, value: maze[y][x-1], route: 'left'})
         }
-        if (maze[x + 1] !== undefined) {
+        if (maze[y][x + 1] !== undefined) {
+            debugger
             cords.push({x: x + 1, y: y, value: maze[y][x+1], route: 'right'})
         }
         return cords.filter(el => el.value === '+')
@@ -95,9 +96,8 @@ const exitFromMaze = (maze) => {
         return false
     }
   return checkPath(start, end) ? road : "The maze has no exit!!!"
-
 }
 
-const result = exitFromMaze(maze)
+const result = exitFromMaze(maze2)
 
 console.log(result)
