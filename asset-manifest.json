@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ITRexGroupTest/static/css/main.24d1dd93.chunk.css",
-    "main.js": "/ITRexGroupTest/static/js/main.2a2f0aac.chunk.js",
-    "main.js.map": "/ITRexGroupTest/static/js/main.2a2f0aac.chunk.js.map",
+    "main.js": "/ITRexGroupTest/static/js/main.32a84d45.chunk.js",
+    "main.js.map": "/ITRexGroupTest/static/js/main.32a84d45.chunk.js.map",
     "runtime-main.js": "/ITRexGroupTest/static/js/runtime-main.cc8ac661.js",
     "runtime-main.js.map": "/ITRexGroupTest/static/js/runtime-main.cc8ac661.js.map",
     "static/js/2.5661f338.chunk.js": "/ITRexGroupTest/static/js/2.5661f338.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.cc8ac661.js",
     "static/js/2.5661f338.chunk.js",
     "static/css/main.24d1dd93.chunk.css",
-    "static/js/main.2a2f0aac.chunk.js"
+    "static/js/main.32a84d45.chunk.js"
   ]
 }
